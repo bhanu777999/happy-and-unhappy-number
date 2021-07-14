@@ -1,0 +1,50 @@
+print("do you want CHECK or RANGE")
+want=input("enter what you want: ")
+if want=="check":
+    def sumofdigit(n):
+        res=0
+        rem=0
+        while n>0:
+            rem=n%10
+            res=res+rem*rem
+            n=n//10
+        return res
+
+    n=int(input("enter the number "))
+
+    result=n
+    while result!=1 and result!=4:
+         result=sumofdigit(result)
+    if result==1:
+        print("happy")
+    else:
+        print("not happy")
+
+else:
+    a,b=map(int,input("enter two numbers :").split())
+    print("what you want happy numbers or unhappy numbers")
+    whatyoulike=input("enter happy or unhappy")
+    
+  
+    def checkhappy(num):
+        re=0
+        sum=0
+        while num>0:
+            re=num%10
+            sum=sum+re*re
+            num=num//10
+        return sum
+    
+    for i in range(a, b+1):
+        my_result = i
+        while(my_result != 1 and my_result != 4):
+             my_result = checkhappy(my_result)
+        if(my_result == 1) and whatyoulike=="happy":
+            print(i,"is the unhappy number")
+        elif(my_result==4)and whatyoulike=="unhappy":
+            print(i,"is the unhappy number")
+            
+    
+  
+        
+    
